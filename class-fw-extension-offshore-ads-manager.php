@@ -217,7 +217,7 @@ class FW_Extension_Offshore_Ads_Manager extends FW_Extension
 		}
 
 		foreach ($all_positions as $position_key => $position) {
-			$val = fw_get_db_ext_settings_option($this->get_name(),$this->category_prefix.$position_key) ;
+			$val = fw_get_db_ext_settings_option($this->get_name(),$this->category_prefix.$position_key,array()) ;
 			$term_id = empty($val) ? '' : array_shift($val);
 
 			if($filter && empty($term_id)) {
