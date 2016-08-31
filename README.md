@@ -1,3 +1,3 @@
-# offshore-ads-manager
+# banner-manager
 
 Unyson Extension: banner manager
