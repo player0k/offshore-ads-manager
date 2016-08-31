@@ -41,8 +41,8 @@ class FW_Extension_Banner_Manager extends FW_Extension
 			return $post_options;
 		}
 
-		$offshore_options = apply_filters(
-			'fw_ext_offshore_ads_manager_options',
+		$banner_options = apply_filters(
+			'fw_ext_banner_manager_options',
 			array(
 				'ads_manager_tab' => array(
 					'title'   => 'Управление баннерами',
@@ -53,13 +53,13 @@ class FW_Extension_Banner_Manager extends FW_Extension
 		);
 
 		if (isset($post_options['main']) && $post_options['main']['type'] === 'box') {
-			$post_options['main']['options'][] = $offshore_options;
+			$post_options['main']['options'][] = $banner_options;
 		} else {
 			$post_options['main'] = array(
 				'title'   => false,
 				'desc'    => false,
 				'type'    => 'box',
-				'options' => $offshore_options
+				'options' => $banner_options
 			);
 		}
 
