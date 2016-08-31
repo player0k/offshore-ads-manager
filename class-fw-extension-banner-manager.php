@@ -2,14 +2,14 @@
 	die('Forbidden');
 }
 
-class FW_Extension_Offshore_Ads_Manager extends FW_Extension
+class FW_Extension_Banner_Manager extends FW_Extension
 {
-	private $post_type_name = 'off-ads-manager-type';
-	private $post_type_slug = 'off-ads-manager-slug';
-	private $taxonomy_slug = 'off-ads-manager-tax';
+	private $post_type_name = 'banner-manager-type';
+	private $post_type_slug = 'banner-manager-slug';
+	private $taxonomy_slug = 'banner-manager-tax';
 	private $category_prefix = 'category-';
 	private $banner_prefix = 'banner-';
-	private $supports_feature_name = 'off-ads-manager';
+	private $supports_feature_name = 'banner-manager';
 
 	public function get_post_type()
 	{
@@ -19,7 +19,7 @@ class FW_Extension_Offshore_Ads_Manager extends FW_Extension
 	private function get_extended_positions()
 	{
 		$positions = array();
-		$positions = apply_filters('fw-extension:offshore-ads-manager:extended_positions', $positions );
+		$positions = apply_filters('fw-extension:banner-manager:extended_positions', $positions );
 		return $positions;
 	}
 
@@ -29,7 +29,7 @@ class FW_Extension_Offshore_Ads_Manager extends FW_Extension
 		$this->register_taxonomy();
 
 		if (is_admin()){
-			add_filter('fw_ext_offshore_ads_manager_settings_options', array($this, '_filter_fw_extension_settings_page_options'));
+			add_filter('fw_ext_banner_manager_settings_options', array($this, '_filter_fw_extension_settings_page_options'));
 			add_action( 'admin_enqueue_scripts', array($this, '_admin_action_enqueue_scripts_on_extension_settings_page') );
 			add_filter('fw_post_options', array($this, '_filter_fw_post_options'), 10, 2);
 		}
