@@ -44,7 +44,7 @@ class FW_Extension_Banner_Manager extends FW_Extension
 		$banner_options = apply_filters(
 			'fw_ext_banner_manager_options',
 			array(
-				'ads_manager_tab' => array(
+				'banner_manager_tab' => array(
 					'title'   => 'Управление баннерами',
 					'type'    => 'tab',
 					'options' => $this->get_banners_multi_selects_options(true, $post_type)
@@ -267,7 +267,7 @@ class FW_Extension_Banner_Manager extends FW_Extension
 			return $options;
 		}
 
-		$options['offshore-ads-manager'] = array(
+		$options['banner-manager'] = array(
 			'title'   => 'Управление баннерами',
 			'type'    => 'tab',
 			'options' => array(
@@ -275,7 +275,7 @@ class FW_Extension_Banner_Manager extends FW_Extension
 					'title'   => 'Выбор категорий',
 					'type'    => 'tab',
 					'options' => array(
-						'ads_categories_tab' => array(
+						'banner_categories_tab' => array(
 							'title'   => 'Выберите категорию баннеров для позий',
 							'type'    => 'box',
 							'options' => $this->get_categories_multi_selects_options(),
