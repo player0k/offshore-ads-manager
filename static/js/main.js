@@ -7,8 +7,8 @@
 			$elements: $('.fw-settings-form')
 		});
 		fwEvents.trigger('fw:options:tabs:initialized', {
-				$tabCategories: $('#fw-options-box-ads_categories_tab'),
-				$tabBanners:$('#fw-options-box-ads_banners_tab')
+				$tabCategories: $('#fw-options-box-banner_categories_tab'),
+				$tabBanners:$('#fw-options-box-banners_tab')
 			}
 		)
 	});
@@ -64,12 +64,12 @@
 	 * Display the alert box on change category
 	 */
 	fwEvents.on('fw:options:multi-select-extended:term:change', function (data) {
-		var $msgBox = $('#fw-options-tab-offshore-ads-manager').parent().find('.message-box'),
+		var $msgBox = $('#fw-options-tab-banner-manager').parent().find('.message-box'),
 			html = '<div class="message-box alert-box"><a href="#" onclick="this.parentNode.style.display = \'none\';" class="close" data-dismiss="alert">×</a>'+ PhpVar.alertMessage +'</div>';
 		if ($msgBox.length) {
 			$msgBox.show();
 		} else {
-			$('#fw-options-tab-offshore-ads-manager').before(html);
+			$('#fw-options-tab-banner-manager').before(html);
 		}
 	});
 
