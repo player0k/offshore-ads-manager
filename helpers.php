@@ -1,17 +1,17 @@
 <?php if (!defined('FW')) die('Forbidden');
 
 /**
- * Returns whether or not a post was built with the page builder
+ * Returns whether or not a post was built with the banner manager
  */
-function fw_ext_offshore_ads_manager_is_supported($post_id = '') {
-	return fw()->extensions->get('offshore-ads-manager')->is_supported($post_id);
+function fw_ext_banner_manager_is_supported($post_id = '') {
+	return fw()->extensions->get('banner-manager')->is_supported($post_id);
 }
 
 /**
- * Returns all post types that can be integrated with the offshore ads manager
+ * Returns all post types that can be integrated with the banner manager
  */
-function fw_ext_offshore_ads_manager_get_supported_post_types() {
-	$cache_key = fw()->extensions->get('offshore-ads-manager')->get_cache_key('/supported_post_types');
+function fw_ext_banner_manager_get_supported_post_types() {
+	$cache_key = fw()->extensions->get('banner-manager')->get_cache_key('/supported_post_types');
 
 	try {
 		return FW_Cache::get($cache_key);
@@ -23,7 +23,7 @@ function fw_ext_offshore_ads_manager_get_supported_post_types() {
 				$result[$key] = $post_type->labels->name;
 		}
 
-		$result = apply_filters('fw_ext_offshore_ads_manager_supported_post_types', $result);
+		$result = apply_filters('fw_ext_banner_manager_supported_post_types', $result);
 
 		FW_Cache::set($cache_key, $result);
 
